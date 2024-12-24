@@ -36,3 +36,5 @@ bash ./mult_v3.sh
 - The script uses trap to handle termination signals and clean up child processes
 - Each chunk starts with a 10-second delay to prevent resource overload
 - Ensure adequate system resources for parallel processing
+- Processing time and memory usage increase with higher `n_cite` values as more papers need to be computed.
+
