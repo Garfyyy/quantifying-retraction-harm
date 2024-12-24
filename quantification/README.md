@@ -12,7 +12,7 @@ This directory contains the core implementation for calculating the harm of pape
 The `mult_v3.sh` script contains several key configuration parameters:
 
 ```sh
-n_cite          # Citation layer level (0 for retracted papers, 1 for first-layer citations, etc.)
+n_cite          # Citation layer level (0 for first-layer citations, etc.)
 num_chunks      # Total number of chunks to split the dataset
 st              # Starting chunk index
 ed              # Ending chunk index
