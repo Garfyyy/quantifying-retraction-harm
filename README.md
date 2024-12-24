@@ -16,6 +16,7 @@ A framework to quantify and analyze the harm of retracted papers through citatio
 
 - [Data Prerequisites](#data-prerequisites)
 - [Repo Contents](#repo-contents)
+- [System Requirements](#system-requirements)
 
 ##  Data Prerequisites
 
@@ -54,3 +55,29 @@ SciSciNet Databas offering comprehensive author, journal metadata and linkage in
 **analysis.** This directory contains the analysis and visualization code for processing the research data in this paper. [Code Usage](https://github.com/Garfyyy/quantifying-retraction-harm/tree/master/analysis)
 
 **data.** Final statistical results and processed datasets used in the paper. For methodology details, see "Statistics" in supplementary materials.
+
+## System Requirements
+
+**Hardware Requirements**
+
+The package processes a large dataset containing millions of research papers and citation recods. The package has been tested on the following systems:
+
+**(1) Quantification Environment**
+
+- **RAM:** 251 GB
+- **CPU:** Intel(R) Xeon(R) Silver 4208 CPU @ 2.10GHz 32 cores
+- **Operating System:** CentOS Linux release 7.9.2009
+
+**（2）Analysis Environment**
+
+      ① Linux Environment
+      - **RAM:** 251 GB
+      - **CPU:** Intel(R) Xeon(R) Silver 4208 CPU @ 2.10GHz 32 cores
+      - **Operating System:** CentOS Linux release 7.9.2009
+
+      AND
+      
+      ② Windows Environment
+      - **RAM:** 16.0 GB
+      - **CPU:** 12th Gen Intel(R) Core(TM) i7-12700 @ 2.10GHz 12 cores
+      - **Operating System:** Windows 11 Home Chinese Version 22H2
