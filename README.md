@@ -10,7 +10,7 @@ A framework to quantify and analyze the harm of retracted papers through citatio
 
 - High-impact journals show more resilience to retraction harm
   
-![Alt text](image.png)
+![Alt text](https://github.com/Garfyyy/quantifying-retraction-harm/blob/master/image.png)
 
 ## Contents
 - [Quantifying the Harm Caused by Retracted Research](#quantifying-the-harm-caused-by-retracted-research)
