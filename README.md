@@ -50,8 +50,8 @@ SciSciNet Databas offering comprehensive author, journal metadata and linkage in
 
 ## Repo Contents
 
-**quantification.** This directory contains the code for quantifying the harm caused by retracted research.
+**quantification.** This directory contains the code for quantifying the harm caused by retracted research. [Code Usage](https://github.com/Garfyyy/quantifying-retraction-harm/tree/master/quantification)
 
-**analysis.** This directory contains the analysis and visualization code for processing the research data in this paper.
+**analysis.** This directory contains the analysis and visualization code for processing the research data in this paper. [Code Usage](https://github.com/Garfyyy/quantifying-retraction-harm/tree/master/analysis)
 
 **data.** Final statistical results and processed datasets used in the paper. For methodology details, see "Statistics" in supplementary materials.
