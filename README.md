@@ -10,13 +10,47 @@ A framework to quantify and analyze the harm of retracted papers through citatio
 
 - High-impact journals show more resilience to retraction harm
   
-![Alt text](https://github.com/Garfyyy/quantifying-retraction-harm/blob/master/image.png)
-
 ## Contents
 
+- [System Requirements](#system-requirements)
 - [Data Prerequisites](#data-prerequisites)
 - [Repo Contents](#repo-contents)
-- [System Requirements](#system-requirements)
+- [Installation Guide](#installation-guide)
+- [Demo](#demo)
+  
+## System Requirements
+
+**Hardware Requirements**
+
+The package processes a large dataset containing millions of research papers and citation recods. The package has been tested on the following systems:
+
+**(1) Quantification Environment**
+
+- **RAM:** 251 GB
+- **CPU:** Intel(R) Xeon(R) Silver 4208 CPU @ 2.10GHz 32 cores
+- **Operating System:** CentOS Linux release 7.9.2009
+
+**（2）Analysis Environment**
+
+      ① Linux Environment
+      - **RAM:** 251 GB
+      - **CPU:** Intel(R) Xeon(R) Silver 4208 CPU @ 2.10GHz 32 cores
+      - **Operating System:** CentOS Linux release 7.9.2009
+
+      AND
+      
+      ② Windows Environment
+      - **RAM:** 16.0 GB
+      - **CPU:** 12th Gen Intel(R) Core(TM) i7-12700 @ 2.10GHz 12 cores
+      - **Operating System:** Windows 11 Home Chinese Version 22H2
+  
+**Software Requirements**
+
+- **Python:** 3.10
+- **IDE:**
+  - PyCharm 2020
+  - Visual Studio Code 1.85.2
+
 
 ##  Data Prerequisites
 
@@ -50,34 +84,75 @@ SciSciNet Databas offering comprehensive author, journal metadata and linkage in
 
 ## Repo Contents
 
-**quantification.** This directory contains the code for quantifying the harm caused by retracted research. [Code Usage](https://github.com/Garfyyy/quantifying-retraction-harm/tree/master/quantification)
+**quantification.** This directory contains the code for quantifying the harm caused by retracted research.
 
-**analysis.** This directory contains the analysis and visualization code for processing the research data in this paper. [Code Usage](https://github.com/Garfyyy/quantifying-retraction-harm/tree/master/analysis)
+**analysis.** This directory contains the analysis and visualization code for processing the research data in this paper.
 
 **data.** Final statistical results and processed datasets used in the paper. For methodology details, see "Statistics" in supplementary materials.
 
-## System Requirements
+## Installation Guide
 
-**Hardware Requirements**
+Change the directory, install the dependencies for each part, and refer to the README of each part for the process:
 
-The package processes a large dataset containing millions of research papers and citation recods. The package has been tested on the following systems:
+1. **Quantification of Harm**
 
-**(1) Quantification Environment**
+```bash
+cd quantification
 
-- **RAM:** 251 GB
-- **CPU:** Intel(R) Xeon(R) Silver 4208 CPU @ 2.10GHz 32 cores
-- **Operating System:** CentOS Linux release 7.9.2009
+pip install -r requirements.txt
+```
 
-**（2）Analysis Environment**
+This section refers to the README, which can be accessed via the link. [Quantification README](https://github.com/Garfyyy/quantifying-retraction-harm/tree/master/quantification)
 
-      ① Linux Environment
-      - **RAM:** 251 GB
-      - **CPU:** Intel(R) Xeon(R) Silver 4208 CPU @ 2.10GHz 32 cores
-      - **Operating System:** CentOS Linux release 7.9.2009
+1. **Analysis**
 
-      AND
-      
-      ② Windows Environment
-      - **RAM:** 16.0 GB
-      - **CPU:** 12th Gen Intel(R) Core(TM) i7-12700 @ 2.10GHz 12 cores
-      - **Operating System:** Windows 11 Home Chinese Version 22H2
+```bash
+cd analysis
+
+pip install -r requirements.txt
+```
+
+This section refers to the README, which can be accessed via the link. [Analysis README](https://github.com/Garfyyy/quantifying-retraction-harm/tree/master/analysis)
+
+## Demo
+
+(1) Move data to `analysis/src/`.
+
+```bash
+mv data/* analysis/src/
+```
+
+(2) Changes the current directory to `analysis/src/`.
+
+```bash
+cd analysis/src/
+```
+
+(3) Runs the Python script.
+
+```bash
+# The definition of paper_cn is detailed in the "Citation Distance" section under 
+# "Materials and Methods" in the paper.
+
+# The statistical methods for quantifying harm are defined in the "Statistics" 
+# section under "Materials and Methods" in the paper.
+
+# Overall analysis of harm for paper_c1
+python fig2_final.py
+
+# Overall analysis of harm for paper_c[2-6]
+python fig3.py
+
+# Overall analysis of harm for paper_c[2-6] (drop duplicates)
+python fig3_s1.py
+
+# Different JIF intervals analysis of harm for paper_c[1-6]
+python fig4_v3.py
+
+# Citation time analysis of harm for paper_c[1-6]
+python fig_5.py
+```
+
+**Demo fig2a output example**
+
+![fig2a_example](https://github.com/Garfyyy/quantifying-retraction-harm/blob/master/fig2a_example.png)
