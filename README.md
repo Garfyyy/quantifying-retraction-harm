@@ -153,6 +153,12 @@ python fig4_v3.py
 python fig_5.py
 ```
 
+**Note on Runtime:**
+
+- Each figure generation takes approximately ***2*** seconds
+- Total runtime for all analyses may vary depending on the data size
+- Runtime measurements are based on Windows 11 with i7-12700 CPU and 16GB RAM
+
 **Demo fig2a output example**
 
 ![fig2a_example](https://github.com/Garfyyy/quantifying-retraction-harm/blob/master/fig2a_example.png)
