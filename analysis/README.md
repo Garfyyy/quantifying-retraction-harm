@@ -1,4 +1,10 @@
+# Analysis
+
+This directory contains the plotting scripts. The statistical methods for quantifying harm are defined in the "Statistics" section under "Materials and Methods" in the paper.
+
 ## Usage
+
+
 
 1. Install dependencies
 
@@ -21,5 +27,18 @@ cd src
 4. Run Plotting Scripts
 
 ```bash
-python xxxx.py
+# Overall analysis of harm for paper_c1
+python fig2_final.py
+
+# Overall analysis of harm for paper_c[2-6]
+python fig3.py
+
+# Overall analysis of harm for paper_c[2-6] (drop duplicates)
+python fig3_s1.py
+
+# Different JIF intervals analysis of harm for paper_c[1-6]
+python fig4_v3.py
+
+# Citation time analysis of harm for paper_c[1-6]
+python fig_5.py
 ```
