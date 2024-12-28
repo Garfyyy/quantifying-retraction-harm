@@ -4,11 +4,9 @@ A framework to quantify and analyze the harm of retracted papers through citatio
 
 - Retracted papers cause harm through "attention escape" mechanism
 
-- Long-term impact is more significant than short-term effects
-
 - Indirect citations suffer more harm than direct citations
 
-- High-impact journals show more resilience to retraction harm
+- Lower JIF journals experience greater harm from retractions
   
 ## Contents
 
@@ -69,7 +67,7 @@ According to the official documentation, request and download the following data
   
 **Notice:** This research utilizes the dataset version released on 2024-01-04 and the API Key obtained in step 1 is required for dataset requests.
 
-**3. Retraction Watch Database** [Link](https://gitlab.com/crossref/eretraction-watch-data)
+**3. Retraction Watch Database** [Link](https://gitlab.com/crossref/retraction-watch-data)
 
 The Retraction Watch Database is a collection of retracted papers and their associated metadata. Download the dataset from the official repository.
 
