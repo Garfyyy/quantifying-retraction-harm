@@ -1,4 +1,4 @@
-# Quantifying the Harm Caused by Retracted Research
+# Quantifying the Dynamics of Harm Caused by Retracted Research
 
 A framework to quantify and analyze the harm of retracted papers through citation networks. Key findings:
 
