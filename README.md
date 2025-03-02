@@ -102,7 +102,7 @@ pip install -r requirements.txt
 
 This section refers to the README, which can be accessed via the link. [Quantification README](https://github.com/Garfyyy/quantifying-retraction-harm/tree/master/quantification)
 
-1. **Analysis**
+2. **Analysis**
 
 ```bash
 cd analysis
@@ -113,6 +113,27 @@ pip install -r requirements.txt
 This section refers to the README, which can be accessed via the link. [Analysis README](https://github.com/Garfyyy/quantifying-retraction-harm/tree/master/analysis)
 
 ## Demo
+
+### 1. Quantification of Harm
+
+```bash
+cd analysis
+bash mult_v3.sh
+```
+This gives us the harm received by 100 demo papers within 10 years of publication.
+
+### 2. Calculate Quartile Statistics for Harm
+
+```bash
+python calc_hamr.py
+```
+
+In this demo, we obtain the first quartile (q1), median (q2), and third quartile (q3) values of harm for the 'Medicine' field over a 10-year period.
+The datasets used for quantification and quartile calculations are very large. The calculation results in the demo are not accurate and are for reference only. 
+
+### 3. Analysis
+
+The complete calculation results are available in the **data** folder. Here use the complete dataset for analysis.
 
 (1) Move data to `analysis/src/`.
 
