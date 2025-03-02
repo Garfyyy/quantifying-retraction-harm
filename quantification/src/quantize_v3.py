@@ -12,7 +12,7 @@ MAX_YEAR = 2023
 RANGE_YEAR = 10
 T_YEAR = MAX_YEAR - RANGE_YEAR
 
-citations_n_year = pl.read_parquet(f"./citations_10_year_with_v_fl_id_fillnull_new.parquet")
+citations_n_year = pl.read_parquet(f"./demo_data/demo_papers.parquet")
 
 # print(re_citations_ids_df.shape)
 selecet_col = [str(i + 1) for i in range(10)]
@@ -75,7 +75,7 @@ if __name__ == "__main__":
     args = parrser.parse_args()
 
     # re_citations_df = pl.read_parquet(f"../ref_per_process/retractions_citations_{args.n_cite}_n.parquet")
-    re_citations_df = pl.read_parquet(f"./ref_per_process/references_{args.n_cite}.parquet")
+    re_citations_df = pl.read_parquet(f"./demo_data/references_{args.n_cite}.parquet")
     re_citations_df = citations_n_year.join(re_citations_df.select("citingcorpusid"), left_on="corpusid", right_on="citingcorpusid", how="semi")
     
     sucess_df = pl.DataFrame()
@@ -106,4 +106,4 @@ if __name__ == "__main__":
     else:
         sucess_df = pl.concat([sucess_df, res_df]).unique("corpusid")
         
-    sucess_df.write_parquet(f"./res/quantize_{args.n_cite}_{args.n_chunk}.parquet")
+    sucess_df.write_parquet(f"./res/paper_c{args.n_cite+1}/quantize_{args.n_cite}_{args.n_chunk}.parquet")
