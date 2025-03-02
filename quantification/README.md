@@ -30,6 +30,9 @@ vim mult_v3.sh
 
 # Run the parallel processing script
 bash ./mult_v3.sh
+
+# Run the calculating script
+python calc_hamr.py
 ```
 
 **Note:**
