@@ -100,6 +100,8 @@ cd quantification
 pip install -r requirements.txt
 ```
 
+The installation process takes about 10 seconds.
+
 This section refers to the README, which can be accessed via the link. [Quantification README](https://github.com/Garfyyy/quantifying-retraction-harm/tree/master/quantification)
 
 2. **Analysis**
@@ -109,6 +111,8 @@ cd analysis
 
 pip install -r requirements.txt
 ```
+
+The installation process takes about 10 seconds.
 
 This section refers to the README, which can be accessed via the link. [Analysis README](https://github.com/Garfyyy/quantifying-retraction-harm/tree/master/analysis)
 
@@ -126,6 +130,11 @@ This gives us the harm received by 100 demo papers within 10 years of publicatio
 
 ```bash
 python calc_hamr.py
+
+# output the 'Medicine' field quartile statistics
+# q1: [-0.72870662 -0.59714599 -0.35194113 -0.57356077 -0.70212766  -0.62033037 -0.5308642  -0.62432411 -0.59534771 -0.57835616]
+# q2: [-0.06854839  0.07968844  0.1659919   0.21257367  0.20075312  0.26370023 0.28019454  0.47482014  0.44240077  0.50371471]
+# q3: [0.46927966   0.57701758   0.6498847  0.53979239  0.64233888  0.69115027 0.85652007 1. 0.78139134 1.]
 ```
 
 In this demo, we obtain the first quartile (q1), median (q2), and third quartile (q3) values of harm for the 'Medicine' field over a 10-year period.
