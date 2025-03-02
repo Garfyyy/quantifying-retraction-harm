@@ -6,6 +6,7 @@ This directory contains the core implementation for calculating the harm of pape
 
 - `quantize_v3.py`: Main script for calculating the harm  of individual papers.
 - `mult_v3.sh`: Shell script for parallel processing across multiple machines and cores
+- `calc_hamr.py`: Python script for calculating quartile statistics for harm
 
 ## Configuration Parameters
 
