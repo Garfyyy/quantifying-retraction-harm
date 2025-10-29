@@ -197,4 +197,8 @@ python fig_5.py
 
 **Demo fig2a output example**
 
-![fig2a_example](https://github.com/Garfyyy/quantifying-retraction-harm/blob/master/fig2a_example.png)
+Experimental Group
+![fig2a_experiment](https://github.com/Garfyyy/quantifying-retraction-harm/blob/master/fig2a_experiment.png)
+
+Control Group
+![fig2a_control](https://github.com/Garfyyy/quantifying-retraction-harm/blob/master/fig2a_control.png)
