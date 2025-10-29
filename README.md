@@ -150,7 +150,7 @@ The datasets used for quantification and quartile calculations are very large. T
 
 ### 3. Analysis
 
-The complete calculation results are available in the **data** folder. Here use the complete results for analysis.
+The complete calculation results are available in the **data** (`experimental group`) and **data_control** (`control group`)  folder. Here use the complete results for analysis.
 
 (1) Move data to `analysis/src/`.
 
