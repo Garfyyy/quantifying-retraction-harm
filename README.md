@@ -91,7 +91,10 @@ SciSciNet Databas offering comprehensive author, journal metadata and linkage in
 
 **plotting.** This directory contains the analysis and visualization code for processing the research data in this paper.
 
-**data.** Final statistical results and processed datasets used in the paper. For methodology details, see "Statistics" in supplementary materials.
+**data_experiment.** Final experimental group statistical results and processed datasets used in the paper. For methodology details, see "Methods" in paper.
+
+**data_control** Final control group statistical results and processed datasets used in the paper. For methodology details, see "Methods" in paper.
+
 
 ## Installation Guide
 
@@ -150,12 +153,12 @@ The datasets used for quantification and quartile calculations are very large. T
 
 ### 3. Plotting
 
-The complete calculation results are available in the **data** (`experimental group`) and **data_control** (`control group`)  folder. Here use the complete results for plotting.
+The complete calculation results are available in the **data_experiment** (`experimental group`) and **data_control** (`control group`)  folder. Here use the complete results for plotting.
 
 (1) Move data to `plotting/src/`.
 
 ```bash
-mv data/* plotting/src/
+mv data_experiment/* plotting/src/
 ```
 
 (2) Changes the current directory to `plotting/src/`.
@@ -198,7 +201,7 @@ python fig_5.py
 **Demo fig2a output example**
 
 Experimental Group
-![fig2a_experiment](https://github.com/Garfyyy/quantifying-retraction-harm/blob/master/fig2a_experiment.png)
+![fig2a_experiment](fig2a_experiment.png)
 
 Control Group
-![fig2a_control](https://github.com/Garfyyy/quantifying-retraction-harm/blob/master/fig2a_control.png)
+![fig2a_control](fig2a_control.png)

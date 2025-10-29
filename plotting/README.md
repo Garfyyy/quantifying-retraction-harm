@@ -15,7 +15,7 @@ pip install -r requirements.txt
 2. Move data to this directory
 
 ```bash
-mv ../data/* ./src/
+mv ../data_experiment/* ./src/
 ```
 
 3. Change directory to `src`
