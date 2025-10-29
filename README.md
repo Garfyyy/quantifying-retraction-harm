@@ -19,7 +19,7 @@ A framework to quantify and analyze the harm of retracted papers through citatio
   - [Demo](#demo)
     - [1. Quantification of Harm](#1-quantification-of-harm)
     - [2. Calculate Quartile Statistics for Harm](#2-calculate-quartile-statistics-for-harm)
-    - [3. Analysis](#3-analysis)
+    - [3. Plotting](#3-plotting)
   
 ## System Requirements
 
@@ -33,7 +33,7 @@ The package processes a large dataset containing millions of research papers and
 - **CPU:** Intel(R) Xeon(R) Silver 4208 CPU @ 2.10GHz 32 cores
 - **Operating System:** CentOS Linux release 7.9.2009
 
-**（2）Analysis Environment**
+**（2）Plotting Environment**
 
       ① Linux Environment
       - **RAM:** 251 GB
@@ -89,7 +89,7 @@ SciSciNet Databas offering comprehensive author, journal metadata and linkage in
 
 **quantification.** This directory contains the code for quantifying the harm caused by retracted research.
 
-**analysis.** This directory contains the analysis and visualization code for processing the research data in this paper.
+**plotting.** This directory contains the analysis and visualization code for processing the research data in this paper.
 
 **data.** Final statistical results and processed datasets used in the paper. For methodology details, see "Statistics" in supplementary materials.
 
@@ -109,24 +109,24 @@ The installation process takes about 10 seconds.
 
 This section refers to the README, which can be accessed via the link. [Quantification README](https://github.com/Garfyyy/quantifying-retraction-harm/tree/master/quantification)
 
-2. **Analysis**
+2. **plotting**
 
 ```bash
-cd analysis
+cd plotting
 
 pip install -r requirements.txt
 ```
 
 The installation process takes about 10 seconds.
 
-This section refers to the README, which can be accessed via the link. [Analysis README](https://github.com/Garfyyy/quantifying-retraction-harm/tree/master/analysis)
+This section refers to the README, which can be accessed via the link. [Plotting README](https://github.com/Garfyyy/quantifying-retraction-harm/tree/master/plotting)
 
 ## Demo
 
 ### 1. Quantification of Harm
 
 ```bash
-cd analysis
+cd plotting
 bash mult_v3.sh
 
 # Output: Quantized results (e.g., ./res/paper_c1/quantize_0_0.parquet),  
@@ -148,20 +148,20 @@ python calc_harm.py
 In this demo, we obtain the first quartile (q1), median (q2), and third quartile (q3) values of harm for the 'Medicine' field over a 10-year period.
 The datasets used for quantification and quartile calculations are very large. The calculation results in the demo are not accurate and are for reference only. 
 
-### 3. Analysis
+### 3. Plotting
 
-The complete calculation results are available in the **data** (`experimental group`) and **data_control** (`control group`)  folder. Here use the complete results for analysis.
+The complete calculation results are available in the **data** (`experimental group`) and **data_control** (`control group`)  folder. Here use the complete results for plotting.
 
-(1) Move data to `analysis/src/`.
+(1) Move data to `plotting/src/`.
 
 ```bash
-mv data/* analysis/src/
+mv data/* plotting/src/
 ```
 
-(2) Changes the current directory to `analysis/src/`.
+(2) Changes the current directory to `plotting/src/`.
 
 ```bash
-cd analysis/src/
+cd plotting/src/
 ```
 
 (3) Runs the Python script.
@@ -173,26 +173,26 @@ cd analysis/src/
 # The statistical methods for quantifying harm are defined in the "Statistics" 
 # section under "Materials and Methods" in the paper.
 
-# Overall analysis of harm for paper_c1
+# Overall plotting of harm for paper_c1
 python fig2_final.py
 
-# Overall analysis of harm for paper_c[2-6]
+# Overall plotting of harm for paper_c[2-6]
 python fig3.py
 
-# Overall analysis of harm for paper_c[2-6] (drop duplicates)
+# Overall plotting of harm for paper_c[2-6] (drop duplicates)
 python fig3_s1.py
 
-# Different JIF intervals analysis of harm for paper_c[1-6]
+# Different JIF intervals plotting of harm for paper_c[1-6]
 python fig4_v3.py
 
-# Citation time analysis of harm for paper_c[1-6]
+# Citation time plotting of harm for paper_c[1-6]
 python fig_5.py
 ```
 
 **Note on Runtime:**
 
 - Each figure generation takes approximately ***2*** seconds
-- Total runtime for all analyses may vary depending on the data size
+- Total runtime for all plotting may vary depending on the data size
 - Runtime measurements are based on Windows 11 with i7-12700 CPU and 16GB RAM
 
 **Demo fig2a output example**
