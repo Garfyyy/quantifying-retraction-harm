@@ -6,7 +6,7 @@ This directory contains the core implementation for calculating the harm of pape
 
 - `quantize_v3.py`: Main script for calculating the harm  of individual papers.
 - `mult_v3.sh`: Shell script for parallel processing across multiple machines and cores
-- `calc_hamr.py`: Python script for calculating quartile statistics for harm
+- `calc_harm.py`: Python script for calculating quartile statistics for harm
 
 ## Configuration Parameters
 
@@ -17,6 +17,15 @@ n_cite          # Citation layer level (0 for first-layer citations, etc.)
 num_chunks      # Total number of chunks to split the dataset
 st              # Starting chunk index
 ed              # Ending chunk index
+```
+
+The `calc_harm.py` supports four variants of precomputed data, differing only in how the expected citation is estimated:
+
+```sh
+data            # expected citations based on the mean
+median_data     # expected citations based on the median
+d_data          # control group: expected citations based on the mean
+d_median_data   # control group: expected citations based on the median
 ```
 
 ## Usage
@@ -30,9 +39,12 @@ vim mult_v3.sh
 
 # Run the parallel processing script
 bash ./mult_v3.sh
+# Output: Quantized results (e.g., ./res/paper_c1/quantize_0_0.parquet),  
+# containing both experimental group and control group results.
 
 # Run the calculating script
-python calc_hamr.py
+python calc_harm.py
+# Output the quartile statistics
 ```
 
 **Note:**

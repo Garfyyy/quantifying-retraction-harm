@@ -2,9 +2,9 @@
 
 This directory contains the plotting scripts. The statistical methods for quantifying harm are defined in the "Statistics" section under "Materials and Methods" in the paper.
 
+The same plotting scripts are used to generate results for both experimental group (using `data` or `median_data`) and control group (`d_data or` or `d_median_data`). 
+
 ## Usage
-
-
 
 1. Install dependencies
 

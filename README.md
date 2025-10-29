@@ -10,11 +10,16 @@ A framework to quantify and analyze the harm of retracted papers through citatio
   
 ## Contents
 
-- [System Requirements](#system-requirements)
-- [Data Prerequisites](#data-prerequisites)
-- [Repo Contents](#repo-contents)
-- [Installation Guide](#installation-guide)
-- [Demo](#demo)
+- [Quantifying the Dynamics of Harm Caused by Retracted Research](#quantifying-the-dynamics-of-harm-caused-by-retracted-research)
+  - [Contents](#contents)
+  - [System Requirements](#system-requirements)
+  - [Data Prerequisites](#data-prerequisites)
+  - [Repo Contents](#repo-contents)
+  - [Installation Guide](#installation-guide)
+  - [Demo](#demo)
+    - [1. Quantification of Harm](#1-quantification-of-harm)
+    - [2. Calculate Quartile Statistics for Harm](#2-calculate-quartile-statistics-for-harm)
+    - [3. Analysis](#3-analysis)
   
 ## System Requirements
 
@@ -123,15 +128,18 @@ This section refers to the README, which can be accessed via the link. [Analysis
 ```bash
 cd analysis
 bash mult_v3.sh
+
+# Output: Quantized results (e.g., ./res/paper_c1/quantize_0_0.parquet),  
+# containing both experimental group and control group results.
 ```
 This gives us the harm received by 100 demo papers within 10 years of publication.
 
 ### 2. Calculate Quartile Statistics for Harm
 
 ```bash
-python calc_hamr.py
+python calc_harm.py
 
-# output the 'Medicine' field quartile statistics
+# Output the 'Medicine' field quartile statistics
 # q1: [-0.72870662 -0.59714599 -0.35194113 -0.57356077 -0.70212766  -0.62033037 -0.5308642  -0.62432411 -0.59534771 -0.57835616]
 # q2: [-0.06854839  0.07968844  0.1659919   0.21257367  0.20075312  0.26370023 0.28019454  0.47482014  0.44240077  0.50371471]
 # q3: [0.46927966   0.57701758   0.6498847  0.53979239  0.64233888  0.69115027 0.85652007 1. 0.78139134 1.]

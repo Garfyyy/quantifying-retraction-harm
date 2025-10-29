@@ -4,7 +4,11 @@ from functools import reduce
 
 target_df = pl.read_parquet('./res/paper_c1/quantize_0_0.parquet')
 
+# Options: "data", "median_data", "d_data", "d_median_data"
+export_data_col = "data"
+
 paper_vector = target_df.select(["corpusid", "data", "fieldid", "year"])
+paper_vector = target_df.select(["corpusid", "year", "fieldid", export_data_col]).rename({export_data_col: "data"})
 year_1_10_col = [f"{i}" for i in range(1, 11)]
 
 paper_vector = paper_vector.with_columns([pl.col("data").list.get(i).alias(f"{i}") for i in range(11)]).drop("data").drop_nulls(subset=["0"])

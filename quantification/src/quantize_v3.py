@@ -14,6 +14,8 @@ T_YEAR = MAX_YEAR - RANGE_YEAR
 
 citations_n_year = pl.read_parquet(f"./demo_data/demo_papers.parquet")
 
+cur_corpusids = None
+
 # print(re_citations_ids_df.shape)
 selecet_col = [str(i + 1) for i in range(10)]
 
@@ -51,7 +53,41 @@ def process_chunk(chunk: pl.DataFrame) -> list:
             c / (d / d_n) if d != 0 else None
             for c, d in zip(c_vector, citations_n_year_d_res)
         ]
-
+        
+        median_cols = ['citationcount'] + selecet_col 
+        median_df = citations_n_year_d.select(median_cols).median().to_numpy()[0]
+        median_res = [
+            c_citationcount_sum / median_df[0]
+            if median_df[0] != 0
+            else None
+        ] + [
+            c / d if d != 0 else None for c, d in zip(c_vector, median_df[1:])
+        ]
+        
+        normal_d_df: pl.DataFrame = citations_n_year_d.join(cur_corpusids, on="corpusid", how="anti")
+        # normal_d_df = normal_d_df.filter(pl.col('year') == c_year)
+        if normal_d_df.is_empty():
+            continue
+        normal_d_citations_sum = normal_d_df["citationcount"].mean()
+        normal_d_n_year = normal_d_df.select(selecet_col).mean().to_numpy()[0]
+        
+        d_res = [
+            normal_d_citations_sum / (d_citationcount_sum / d_n)
+            if d_citationcount_sum != 0
+            else None
+        ] + [
+            c / (d / d_n) if d != 0 else None
+            for c, d in zip(normal_d_n_year, citations_n_year_d_res)
+        ]
+        
+        d_median_res = [
+            normal_d_citations_sum / median_df[0]
+            if median_df[0] != 0
+            else None
+        ] + [
+            c / d if d != 0 else None for c, d in zip(normal_d_n_year, median_df[1:])
+        ]
+        
         res.append({
             "corpusid" : c_id,
             "venueid": c_venue,
@@ -59,6 +95,10 @@ def process_chunk(chunk: pl.DataFrame) -> list:
             "citationcount": c_citationcount_sum,
             "fieldid": c_field,
             "data": c_res,
+            "median_data": median_res,
+            # "d_ids": d_ids,
+            "d_data": d_res,
+            "d_median_data": d_median_res,
         })
         
     return res
@@ -77,6 +117,8 @@ if __name__ == "__main__":
     # re_citations_df = pl.read_parquet(f"../ref_per_process/retractions_citations_{args.n_cite}_n.parquet")
     re_citations_df = pl.read_parquet(f"./demo_data/references_{args.n_cite}.parquet")
     re_citations_df = citations_n_year.join(re_citations_df.select("citingcorpusid"), left_on="corpusid", right_on="citingcorpusid", how="semi")
+    
+    cur_corpusids = re_citations_df.select("corpusid").unique()
     
     sucess_df = pl.DataFrame()
     if args.n_cite:
